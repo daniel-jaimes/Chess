@@ -8,6 +8,7 @@ import com.kevinychen.chess.main.util.Move;
 
 import javax.swing.*;
 import java.awt.*;
+import java.net.URL;
 import java.util.Iterator;
 import java.util.Observable;
 import java.util.Observer;
@@ -31,8 +32,8 @@ public class BoardPanel extends JPanel implements Observer {
     public BoardPanel(GameModel gameModel) {
         super(new BorderLayout());
         this.gameModel = gameModel;
-        this.boardReversed = Core.getPreferences().isBoardReversed();
-        this.usingCustomPieces = Core.getPreferences().isUsingCustomPieces();
+        this.boardReversed = false; //Core.getPreferences().isBoardReversed();
+        this.usingCustomPieces = false; //Core.getPreferences().isUsingCustomPieces();
         initializeBoardLayeredPane();
         initializeSquares();
         initializePieces();
@@ -252,7 +253,8 @@ public class BoardPanel extends JPanel implements Observer {
     }
 
     private JLabel getPieceImageLabel(Piece piece) {
-        Image pieceImage = new ImageIcon(getClass().getResource(piece.getImageFileName())).getImage();
+        String path = getClass().getResource(piece.getImageFileName()).getFile();
+        Image pieceImage = new ImageIcon(path).getImage();
         pieceImage = pieceImage.getScaledInstance(SQUARE_DIMENSION, SQUARE_DIMENSION, Image.SCALE_SMOOTH);
         JLabel pieceImageLabel = new JLabel(new ImageIcon(pieceImage));
         return pieceImageLabel;

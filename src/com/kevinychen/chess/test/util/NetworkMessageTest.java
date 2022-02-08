@@ -3,11 +3,11 @@ package com.kevinychen.chess.test.util;
 import com.kevinychen.chess.main.pieces.Piece;
 import com.kevinychen.chess.main.util.NetworkMessage;
 import com.kevinychen.chess.main.util.Preferences;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.*;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class NetworkMessageTest {
 

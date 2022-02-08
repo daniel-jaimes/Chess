@@ -2,9 +2,10 @@ package com.kevinychen.chess.test.board;
 
 import com.kevinychen.chess.main.board.Board;
 import com.kevinychen.chess.main.pieces.Piece;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class BoardTest {
 

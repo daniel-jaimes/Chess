@@ -22,7 +22,7 @@ public class AboutCustomPiecesFrame extends JFrame {
     }
 
     private void loadInterface() {
-        initializeCustomPiecesPanel();
+        //initializeCustomPiecesPanel();
         initializeButtonPanel();
 
         this.setLayout(new BorderLayout());
@@ -37,7 +37,8 @@ public class AboutCustomPiecesFrame extends JFrame {
     }
 
     private void initializeCustomPiecesPanel() {
-        Image cannonImage = new ImageIcon(getClass().getResource("/pieces/black_cannon.png")).getImage();
+        //Image cannonImage = new ImageIcon(getClass().getResource("/pieces/black_cannon.png")).getImage();
+        /*
         cannonImage = cannonImage.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         Image shieldImage = new ImageIcon(getClass().getResource("/pieces/white_shield.png")).getImage();
         shieldImage = shieldImage.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
@@ -62,6 +63,8 @@ public class AboutCustomPiecesFrame extends JFrame {
         customPiecesPanel.add(shieldImageLabel);
         customPiecesPanel.add(shieldTextArea);
         SpringUtilities.makeCompactGrid(customPiecesPanel, 2, 2, 0, 0, 10, 10);
+
+         */
     }
 
     private void initializeButtonPanel() {

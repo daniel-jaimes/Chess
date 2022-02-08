@@ -148,9 +148,9 @@ public class GameModel extends Observable {
 
     private void initializeUIComponents() {
         boardPanel = new BoardPanel(this);
-        timerPanel = new TimerPanel(this);
-        controlPanel = new ControlPanel(this);
-        moveHistoryPanel = new MoveHistoryPanel(this);
+        //timerPanel = new TimerPanel(this);
+        //controlPanel = new ControlPanel(this);
+        //moveHistoryPanel = new MoveHistoryPanel(this);
         gameFrame = new GameFrame(this);
         if (GameMode.ONLINE.equals(preferences.getGameMode()) && NetworkMode.HOST.equals(preferences.getNetworkMode())) {
             waitingDialog = new WaitingDialog(this);

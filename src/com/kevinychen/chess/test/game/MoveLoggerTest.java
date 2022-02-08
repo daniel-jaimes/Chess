@@ -3,9 +3,10 @@ package com.kevinychen.chess.test.game;
 import com.kevinychen.chess.main.board.Board;
 import com.kevinychen.chess.main.util.Move;
 import com.kevinychen.chess.main.util.MoveLogger;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class MoveLoggerTest {
 

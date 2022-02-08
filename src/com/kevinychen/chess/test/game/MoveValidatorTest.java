@@ -4,9 +4,10 @@ import com.kevinychen.chess.main.board.Board;
 import com.kevinychen.chess.main.util.Move;
 import com.kevinychen.chess.main.util.MoveValidator;
 import com.kevinychen.chess.main.pieces.*;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class MoveValidatorTest {
 

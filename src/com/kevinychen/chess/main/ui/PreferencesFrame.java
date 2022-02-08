@@ -64,6 +64,13 @@ public class PreferencesFrame extends JFrame {
 
     private void loadPreferences() {
         Preferences preferences = Core.getPreferences();
+        //setNetworkSettingsEnabled(true);
+        //offlineRadioButton.setSelected(true);
+
+        //stopwatchRadioButton.setSelected(true);
+        //timeLimitPanel.setVisible(false);
+
+        /*
         if (!preferences.isPreferencesComplete()) {
             return;
         }
@@ -89,6 +96,8 @@ public class PreferencesFrame extends JFrame {
                 offlineRadioButton.setSelected(true);
                 break;
         }
+
+
         switch (preferences.getTimerMode()) {
             case COUNTDOWN:
                 countdownRadioButton.setSelected(true);
@@ -100,13 +109,16 @@ public class PreferencesFrame extends JFrame {
                 timeLimitPanel.setVisible(false);
                 break;
         }
-        customPiecesCheckBox.setSelected(preferences.isUsingCustomPieces());
-        reverseBoardCheckBox.setSelected(preferences.isBoardReversed());
-
+         */
+        //customPiecesCheckBox.setSelected(false); // preferences.isUsingCustomPieces()
+        //reverseBoardCheckBox.setSelected(false); //preferences.isBoardReversed();
+        //customPiecesCheckBox.setEnabled(false);
+        /*
         if (Core.isInGame()) {
-            setNetworkSettingsEnabled(false);
+            //setNetworkSettingsEnabled(false);
             customPiecesCheckBox.setEnabled(false);
         }
+         */
     }
 
     private void loadInterface() {
@@ -128,12 +140,13 @@ public class PreferencesFrame extends JFrame {
     }
 
     private void initializeBannerPanel() {
+        /*
         onlineRadioButton = new JRadioButton("Online");
         onlineRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setGameSettingsEnabled(!joinGameRadioButton.isSelected());
-                setNetworkSettingsEnabled(true);
+                //setNetworkSettingsEnabled(true);
             }
         });
         offlineRadioButton = new JRadioButton("Offline");
@@ -141,22 +154,24 @@ public class PreferencesFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setGameSettingsEnabled(true);
-                setNetworkSettingsEnabled(false);
+                //setNetworkSettingsEnabled(false);
             }
         });
+
+         */
         ButtonGroup gameModeButtonGroup = new ButtonGroup();
-        gameModeButtonGroup.add(onlineRadioButton);
-        gameModeButtonGroup.add(offlineRadioButton);
+        //gameModeButtonGroup.add(onlineRadioButton);
+        //gameModeButtonGroup.add(offlineRadioButton);
         gameModePanel = new JPanel();
         gameModePanel.setBackground(Color.LIGHT_GRAY);
-        gameModePanel.add(onlineRadioButton);
-        gameModePanel.add(offlineRadioButton);
+        //gameModePanel.add(onlineRadioButton);
+        //gameModePanel.add(offlineRadioButton);
 
         bannerPanel = new JPanel(new GridBagLayout()) {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.drawImage(new ImageIcon(getClass().getResource("/preferences_banner.png")).getImage(), 0, 0, null);
+                //g.drawImage(new ImageIcon(getClass().getResource("/preferences_banner.png")).getImage(), 0, 0, null);
             }
         };
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
@@ -169,17 +184,18 @@ public class PreferencesFrame extends JFrame {
 
     private void initializeSettingsPanel() {
         initializeGameSettingsPanel();
-        initializeNetworkSettingsPanel();
+        //initializeNetworkSettingsPanel();
 
         settingsPanel = new JPanel();
         settingsPanel.setLayout(new BoxLayout(settingsPanel, BoxLayout.Y_AXIS));
         settingsPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 10));
         settingsPanel.add(gameSettingsPanel);
-        settingsPanel.add(networkSettingsPanel);
+        //settingsPanel.add(networkSettingsPanel);
     }
 
     private void initializeGameSettingsPanel() {
         // custom pieces
+        /*
         customPiecesCheckBox = new JCheckBox("Use Custom Piece");
         aboutCustomPiecesButton = new JButton("More about Custom Piece...");
         aboutCustomPiecesButton.setForeground(Color.BLUE);
@@ -216,6 +232,7 @@ public class PreferencesFrame extends JFrame {
                 timeLimitPanel.setVisible(false);
             }
         });
+        */
         ButtonGroup timerModeButtonGroup = new ButtonGroup();
         timerModeButtonGroup.add(countdownRadioButton);
         timerModeButtonGroup.add(stopwatchRadioButton);
@@ -227,27 +244,27 @@ public class PreferencesFrame extends JFrame {
         timeLimitPanel.add(timeLimitUnitLabel);
         timeLimitPanel.setVisible(false);
         timerModeRadioButtonsPanel = new JPanel(new GridLayout(1, 3));
-        timerModeRadioButtonsPanel.add(stopwatchRadioButton);
-        timerModeRadioButtonsPanel.add(countdownRadioButton);
-        timerModeRadioButtonsPanel.add(timeLimitPanel);
+        //timerModeRadioButtonsPanel.add(stopwatchRadioButton);
+        //timerModeRadioButtonsPanel.add(countdownRadioButton);
+        //timerModeRadioButtonsPanel.add(timeLimitPanel);
 
 
         timerSettingsPanel = new JPanel(new SpringLayout());
-        timerModeLabel.setLabelFor(timerModeRadioButtonsPanel);
-        timerSettingsPanel.add(timerModeLabel);
-        timerSettingsPanel.add(timerModeRadioButtonsPanel);
-        SpringUtilities.makeCompactGrid(timerSettingsPanel, 1, 2, 8, 0, 0, 0);
+        //timerModeLabel.setLabelFor(timerModeRadioButtonsPanel);
+        //timerSettingsPanel.add(timerModeLabel);
+        //timerSettingsPanel.add(timerModeRadioButtonsPanel);
+        //SpringUtilities.makeCompactGrid(timerSettingsPanel, 1, 2, 8, 0, 0, 0);
 
         gameSettingsSubPanel = new JPanel(new BorderLayout());
-        gameSettingsSubPanel.add(customPiecesPanel, BorderLayout.PAGE_START);
-        gameSettingsSubPanel.add(reverseBoardPanel, BorderLayout.CENTER);
-        gameSettingsSubPanel.add(timerSettingsPanel, BorderLayout.PAGE_END);
+        //gameSettingsSubPanel.add(customPiecesPanel, BorderLayout.PAGE_START);
+        //gameSettingsSubPanel.add(reverseBoardPanel, BorderLayout.CENTER);
+        //gameSettingsSubPanel.add(timerSettingsPanel, BorderLayout.PAGE_END);
         gameSettingsPanel = new JPanel();
         gameSettingsPanel.add(gameSettingsSubPanel);
         gameSettingsPanel.setBorder(BorderFactory.createTitledBorder("Game Settings"));
 
     }
-
+/*
     private void initializeNetworkSettingsPanel() {
         // network mode
         joinGameRadioButton = new JRadioButton("Join");
@@ -310,11 +327,16 @@ public class PreferencesFrame extends JFrame {
         networkSettingsPanel.setBorder(BorderFactory.createTitledBorder("Network Settings"));
     }
 
+ */
+
     private void initializeButtonsPanel() {
         okButton = new JButton("OK");
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Core.startGame();
+                dispose();
+                /*
                 if (submitPreference()) {
                     if (!Core.isInGame()) {
                         Core.startGame();
@@ -323,6 +345,8 @@ public class PreferencesFrame extends JFrame {
                 } else {
                     showIncompleteDialog();
                 }
+
+                 */
             }
         });
         cancelButton = new JButton("Cancel");
@@ -351,7 +375,7 @@ public class PreferencesFrame extends JFrame {
         timeLimitPanel.setEnabled(b);
         gameSettingsPanel.setEnabled(b);
     }
-
+/*
     private void setNetworkSettingsEnabled(boolean b) {
         joinGameRadioButton.setEnabled(b);
         hostGameRadioButton.setEnabled(b);
@@ -364,9 +388,11 @@ public class PreferencesFrame extends JFrame {
         hostPortFormattedTextField.setEnabled(b);
         networkSettingsPanel.setEnabled(b);
     }
-
-    private boolean submitPreference() {
+ */
+    private void submitPreference() {
         Preferences preferences = Core.getPreferences();
+        preferences.setGameMode(GameMode.OFFLINE);
+        /*
         if (onlineRadioButton.isSelected()) {
             preferences.setGameMode(GameMode.ONLINE);
             if (joinGameRadioButton.isSelected()) {
@@ -379,11 +405,15 @@ public class PreferencesFrame extends JFrame {
             preferences.setPort(Integer.parseInt(hostPortFormattedTextField.getText()));
             preferences.setPlayerName(playerNameTextField.getText());
         }
+
+
         if (offlineRadioButton.isSelected()) {
             preferences.setGameMode(GameMode.OFFLINE);
         }
+         */
         preferences.setUsingCustomPieces(customPiecesCheckBox.isSelected());
         preferences.setBoardReversed(reverseBoardCheckBox.isSelected());
+        /*
         if (stopwatchRadioButton.isSelected()) {
             preferences.setTimerMode(TimerMode.STOPWATCH);
         }
@@ -391,7 +421,8 @@ public class PreferencesFrame extends JFrame {
             preferences.setTimerMode(TimerMode.COUNTDOWN);
             preferences.setTimeLimit((Integer) timeLimitFormattedTextField.getValue());
         }
-        return preferences.isPreferencesComplete();
+         */
+        //return preferences.isPreferencesComplete();
     }
 
     private void showIncompleteDialog() {

@@ -14,9 +14,9 @@ public class Preferences {
         COUNTDOWN, STOPWATCH
     }
 
-    private GameMode gameMode = null;
-    private NetworkMode networkMode = null;
-    private TimerMode timerMode = null;
+    private GameMode gameMode = GameMode.OFFLINE;
+    private NetworkMode networkMode = NetworkMode.HOST;
+    private TimerMode timerMode = TimerMode.STOPWATCH;
     private int timeLimit;
     private boolean usingCustomPieces = false;
     private boolean boardReversed = false;

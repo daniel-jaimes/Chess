@@ -28,7 +28,7 @@ public abstract class Piece {
     public abstract boolean validateMove(Move move);
 
     public String getImageFileName() {
-        String fileName = "/pieces/";
+        String fileName = "/res/pieces/";
         switch (color) {
             case WHITE:
                 fileName += "white_";

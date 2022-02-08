@@ -43,7 +43,7 @@ public class LaunchFrame extends JFrame {
 
     private void initializeBannerPanel() {
         bannerLabel = new JLabel();
-        bannerLabel.setIcon(new ImageIcon(getClass().getResource("/launch_banner.png")));
+        //bannerLabel.setIcon(new ImageIcon(getClass().getResource("/launch_banner.png")));
         bannerPanel = new JPanel();
         bannerPanel.add(bannerLabel);
         bannerPanel.setPreferredSize(new Dimension(600, 250));
@@ -63,9 +63,10 @@ public class LaunchFrame extends JFrame {
         newGameButtonPanel = new JPanel(new GridLayout(1, 1));
         newGameButtonPanel.setBorder(BorderFactory.createEmptyBorder(40, 50, 40, 25));
         newGameButtonPanel.add(newGameButton);
-        loadGameFileChooser = new JFileChooser("Load Saved Game");
+        //loadGameFileChooser = new JFileChooser("Load Saved Game");
         //loadGameFileChooser.setCurrentDirectory(new File("saved games/"));
-        loadGameFileChooser.setFileFilter(new FileNameExtensionFilter("Saved Game", "chessgame"));
+        //loadGameFileChooser.setFileFilter(new FileNameExtensionFilter("Saved Game", "chessgame"));
+        /*
         loadGameButton = new JButton("Load Game");
         loadGameButton.addActionListener(new ActionListener() {
             @Override
@@ -78,11 +79,11 @@ public class LaunchFrame extends JFrame {
         loadGameButtonPanel.setBorder(BorderFactory.createEmptyBorder(40, 25, 40, 50));
         loadGameButtonPanel.add(loadGameButton);
 
-
+         */
         buttonsPanel = new JPanel(new GridLayout(1, 2));
         buttonsPanel.setPreferredSize(new Dimension(600, 150));
         buttonsPanel.add(newGameButtonPanel);
-        buttonsPanel.add(loadGameButtonPanel);
+        //buttonsPanel.add(loadGameButtonPanel);
     }
 
 }
