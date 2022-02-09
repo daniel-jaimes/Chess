@@ -8,6 +8,7 @@ import com.kevinychen.chess.main.util.Move;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.Observable;
@@ -253,7 +254,7 @@ public class BoardPanel extends JPanel implements Observer {
     }
 
     private JLabel getPieceImageLabel(Piece piece) {
-        String path = getClass().getResource(piece.getImageFileName()).getFile();
+        String path = piece.getImageFileName();
         Image pieceImage = new ImageIcon(path).getImage();
         pieceImage = pieceImage.getScaledInstance(SQUARE_DIMENSION, SQUARE_DIMENSION, Image.SCALE_SMOOTH);
         JLabel pieceImageLabel = new JLabel(new ImageIcon(pieceImage));
