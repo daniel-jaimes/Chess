@@ -33,7 +33,7 @@ public class GameModel extends Observable {
     }
 
     private void initialize() {
-        initializeTimers();
+        //initializeTimers();
         initializeUIComponents();
         if (preferences.getGameMode().equals(GameMode.ONLINE)) {
             initializeNetworkHandler();
@@ -78,20 +78,14 @@ public class GameModel extends Observable {
             case HOST:
                 if (MoveValidator.validateMove(move)) {
                     executeMove(move);
-                    if (!networkHandler.sendMoveMessage(move)) {
-                        // failed to send
-                        return false;
-                    }
-                    return true;
+                    // failed to send
+                    return networkHandler.sendMoveMessage(move);
                 } else {
                     return false;
                 }
             case CLIENT:
-                if (!networkHandler.sendMoveMessage(move)) {
-                    // failed to send
-                    return false;
-                }
-                return true;
+                // failed to send
+                return networkHandler.sendMoveMessage(move);
         }
         return false;
     }
@@ -116,7 +110,7 @@ public class GameModel extends Observable {
     private void executeMove(Move move) {
         MoveLogger.addMove(move);
         Board.executeMove(move);
-        moveHistoryPanel.printMove(move);
+        //moveHistoryPanel.printMove(move);
         boardPanel.executeMove(move);
         switchTimer(move);
         if (MoveValidator.isCheckMove(move)) {

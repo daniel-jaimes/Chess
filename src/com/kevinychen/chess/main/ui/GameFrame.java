@@ -147,6 +147,7 @@ public class GameFrame extends JFrame implements Observer{
         this.add(boardPanel);
 
         // TimerPanel
+        /*
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 1;
@@ -154,21 +155,27 @@ public class GameFrame extends JFrame implements Observer{
         gridBagLayout.setConstraints(timerPanel, gridBagConstraints);
         this.add(timerPanel);
 
+         */
+
         // ControlPanel
+/*
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 1;
         gridBagConstraints.gridheight = 1;
         gridBagLayout.setConstraints(controlPanel, gridBagConstraints);
         this.add(controlPanel);
-
+*/
         // MoveHistoryPanel
+        /*
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 1;
         gridBagConstraints.gridheight = 2;
         gridBagLayout.setConstraints(moveHistoryPanel, gridBagConstraints);
         this.add(moveHistoryPanel);
+
+         */
     }
 
 }
