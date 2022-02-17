@@ -112,7 +112,7 @@ public class GameModel extends Observable {
         Board.executeMove(move);
         //moveHistoryPanel.printMove(move);
         boardPanel.executeMove(move);
-        switchTimer(move);
+        //switchTimer(move);
         if (MoveValidator.isCheckMove(move)) {
             if (MoveValidator.isCheckMate(move)) {
                 // checkmate
